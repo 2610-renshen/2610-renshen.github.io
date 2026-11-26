@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Python3 函数 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="定义一个函数可以定义一个由自己想要功能的函数 规则： 函数代码块以 def 关键词开头，后接函数标识符名称和圆括号 ()。任何传入参数和自变量必须放在圆括号中间，圆括号之间可以用于定义参数。函数的第一行语句可以选择性地使用文档字符串—用于存放函数说明。函数内容以冒号 : 起始，并且缩进。return [表达式] 结束函数，选择性地返回一个值给调用方，不带表达式的 return 相当于返回 None">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python3 函数">
+<meta property="og:url" content="https://2610-renshen.github.io/2026/11/26/Python3-%E5%87%BD%E6%95%B0/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="定义一个函数可以定义一个由自己想要功能的函数 规则： 函数代码块以 def 关键词开头，后接函数标识符名称和圆括号 ()。任何传入参数和自变量必须放在圆括号中间，圆括号之间可以用于定义参数。函数的第一行语句可以选择性地使用文档字符串—用于存放函数说明。函数内容以冒号 : 起始，并且缩进。return [表达式] 结束函数，选择性地返回一个值给调用方，不带表达式的 return 相当于返回 None">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-11-26T13:42:02.000Z">
+<meta property="article:modified_time" content="2026-11-26T14:20:57.828Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://2610-renshen.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Python3-函数" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/11/26/Python3-%E5%87%BD%E6%95%B0/" class="article-date">
+  <time class="dt-published" datetime="2026-11-26T13:42:02.000Z" itemprop="datePublished">2026-11-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Python3 函数
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="定义一个函数"><a href="#定义一个函数" class="headerlink" title="定义一个函数"></a>定义一个函数</h2><p>可以定义一个由自己想要功能的函数</p>
+<p>规则：</p>
+<p>函数代码块以 def 关键词开头，后接函数标识符名称和圆括号 ()。<br>任何传入参数和自变量必须放在圆括号中间，圆括号之间可以用于定义参数。<br>函数的第一行语句可以选择性地使用文档字符串—用于存放函数说明。<br>函数内容以冒号 : 起始，并且缩进。<br>return [表达式] 结束函数，选择性地返回一个值给调用方，不带表达式的 return 相当于返回 None。</p>
+<p> def 语法：</p>
+<p>def 函数名（参数列表）:<br>    函数体</p>
+<h2 id="函数调用"><a href="#函数调用" class="headerlink" title="函数调用"></a>函数调用</h2><p>定义一个函数，给了函数一个名称，指定了函数里包含的参数，和代码块结构之后可以通过另一个函数调用执行，也可以直接从 Python 命令提示符执行</p>
+<p>#!&#x2F;usr&#x2F;bin&#x2F;python3</p>
+<p>def printme( str ):</p>
+<p>   print (str)<br>   return</p>
+<p>printme(“我要调用用户自定义函数!”)<br>printme(“再次调用同一函数”）</p>
+<p>运行到def时知道创建了一个叫printme（str）的函数然后跳过def的子代码块，运行下面的代码，再次遇到printme时调用再调用函数</p>
+<h2 id="参数传递"><a href="#参数传递" class="headerlink" title="参数传递"></a>参数传递</h2><p>在 python 中，类型属于对象，对象有不同类型的区分，变量是没有类型的</p>
+<p>可更改(mutable)与不可更改(immutable)对象</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://2610-renshen.github.io/2026/11/26/Python3-%E5%87%BD%E6%95%B0/" data-id="cuid4fWVmb5WLvJh5qqt6vj72" data-title="Python3 函数" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2026/11/26/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/11/">November 2026</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2026/11/26/Python3-%E5%87%BD%E6%95%B0/">Python3 函数</a>
+          </li>
+        
+          <li>
+            <a href="/2026/11/26/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2026/11/24/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

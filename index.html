@@ -106,91 +106,56 @@
 <p>运行到def时知道创建了一个叫printme（str）的函数然后跳过def的子代码块，运行下面的代码，再次遇到printme时调用再调用函数</p>
 <h2 id="参数传递"><a href="#参数传递" class="headerlink" title="参数传递"></a>参数传递</h2><p>在 python 中，类型属于对象，对象有不同类型的区分，变量是没有类型的</p>
 <p>可更改(mutable)与不可更改(immutable)对象</p>
+<p>在 python 中，strings, tuples, 和 numbers 是不可更改的对象，而 list,dict 等则是可以修改的对象</p>
+<p>不可变类型：变量赋值 a&#x3D;5 后再赋值 a&#x3D;10，这里实际是新生成一个 int 值对象 10，再让 a 指向它，而 5 被丢弃，不是改变 a 的值，相当于新生成了 a。</p>
+<p>可变类型：变量赋值 la&#x3D;[1,2,3,4] 后再赋值 la[2]&#x3D;5 则是将 list la 的第三个元素值更改，本身la没有动，只是其内部的一部分值被修改了</p>
+<p>python 函数的参数传递：</p>
+<p>不可变类型：类似 C++ 的值传递，如整数、字符串、元组。如 fun(a)，传递的只是 a 的值，没有影响 a 对象本身。如果在 fun(a) 内部修改 a 的值，则是新生成一个 a 的对象。</p>
+<p>可变类型：类似 C++ 的引用传递，如 列表，字典。如 fun(la)，则是将 la 真正的传过去，修改后 fun 外部的 la 也会受影响</p>
+<p>不可变对象函数内改值，外部原样；可变对象函数内改内容，外部同步变化（函数内整体重新赋值，外部不变）</p>
+<h2 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h2><p>参数类型：</p>
+<p>必需参数<br>关键字参数<br>默认参数<br>不定长参数</p>
+<h3 id="必需参数"><a href="#必需参数" class="headerlink" title="必需参数"></a>必需参数</h3><p>在定义函数时，写在函数名括号里的变量叫形参；如果形参没有设置默认值，它就是一个必需参数</p>
+<p>调用必须函数时，必须给它传一个值，且不能少传多传</p>
+<h3 id="关键字参数"><a href="#关键字参数" class="headerlink" title="关键字参数"></a>关键字参数</h3><p>调用函数时，除了按位置传值，还可以写成 <strong><code>形参名=值</code></strong> 的形式，这种传参方式叫关键字参数</p>
+<p>注意：</p>
+<p>必需参数不可以放在关键字参数的后面</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">introduce(name，age，city）</span><br><span class="line">introduce(name=<span class="string">&quot;小红&quot;</span>, <span class="number">20</span>, <span class="string">&quot;北京&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>正确写法是位置参数放前面</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">introduce(&quot;小红&quot;, age=20, city=&quot;北京&quot;)</span><br></pre></td></tr></table></figure>
+
+<p>同一个参数不能重复传值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">introduce(<span class="string">&quot;小红&quot;</span>, name=<span class="string">&quot;小明&quot;</span>, age=<span class="number">20</span>, city=<span class="string">&quot;北京&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="默认参数"><a href="#默认参数" class="headerlink" title="默认参数"></a>默认参数</h3><p>调用函数时，如果没有传递参数，则会使用默认参数</p>
+<p>#!&#x2F;usr&#x2F;bin&#x2F;python3</p>
+<h2 id="可写函数说明"><a href="#可写函数说明" class="headerlink" title="#可写函数说明"></a>#可写函数说明</h2><p>def printinfo( name, age &#x3D; 35 ):<br>   “打印任何传入的字符串”<br>   print (“名字: “, name)<br>   print (“年龄: “, age)<br>   return</p>
+<p>#调用printinfo函数<br>printinfo( age&#x3D;50, name&#x3D;”runoob” )#这里age&#x3D;50<br>print (“————————“)<br>printinfo( name&#x3D;”runoob” )#这里没有定义age，会使用上面age的默认参数age&#x3D;35</p>
+<h3 id="不定长参数"><a href="#不定长参数" class="headerlink" title="不定长参数"></a>不定长参数</h3><p>不知道这个函数以后会传进来多少个参数，可以接收任意数量的参数</p>
+<p>有*（打包成元组）和**（打包成字典)两种</p>
+<p>顺序：普通参数 → * → **</p>
+<p>打包：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def test(*args):</span><br><span class="line">    print(args)</span><br><span class="line"></span><br><span class="line">test(&quot;hi&quot;, 666, True)</span><br></pre></td></tr></table></figure>
+
+<p>拆包：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nums = (10,20,30)</span><br><span class="line">func(*nums)</span><br></pre></td></tr></table></figure>
+
+<h3 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h3><p>用 lambda 来创建匿名函数</p>
+<p>不再使用 def 语句这样标准的形式定义一个函数，只能写一行表达式</p>
+<p>语法：</p>
+<p>lambda 参数（可以多个，也可以没有）: 返回值（只能是一个表达式，计算结果自动返回，不用写 return）</p>
+<h2 id="return-语句"><a href="#return-语句" class="headerlink" title="return 语句"></a>return 语句</h2><p>于退出函数，选择性地向调用方返回一个表达式。不带参数值的 return 语句返回 None</p>
+<p>作用：把函数里面算好的值，送回到调用它的那一行</p>
+<h2 id="强制位置参数"><a href="#强制位置参数" class="headerlink" title="强制位置参数"></a>强制位置参数</h2><p>写在 <code>/</code> 前面的参数，只能按顺序传，不能用关键字传参Python</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">def func(a, b, /, c):</span><br><span class="line">    print(a,b,c)</span><br></pre></td></tr></table></figure>
+
+<p>a，b在&#x2F;前面只能位置传参，c在&#x2F;后，哪种方法都可以</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://2610-renshen.github.io/2026/11/26/Python3-%E5%87%BD%E6%95%B0/" data-id="cuid4fWVmb5WLvJh5qqt6vj72" data-title="Python3 函数" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-我的第一篇博客" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/11/26/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="article-date">
-  <time class="dt-published" datetime="2026-11-26T13:22:43.175Z" itemprop="datePublished">2026-11-26</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>我的第一篇博客</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://2610-renshen.github.io/2026/11/26/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" data-id="cuidKkhBHTtG4ijWbVy7-HloG" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/11/24/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2026-11-24T08:25:42.450Z" itemprop="datePublished">2026-11-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/11/24/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://2610-renshen.github.io/2026/11/24/hello-world/" data-id="cuidY7x_Q9CdlNT2b6mmCyV3_" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://2610-renshen.github.io/2026/11/26/Python3-%E5%87%BD%E6%95%B0/" data-id="cuid-H5TmpOiWUdc0lIijHgvH" data-title="Python3 函数" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -234,14 +199,6 @@
         
           <li>
             <a href="/2026/11/26/Python3-%E5%87%BD%E6%95%B0/">Python3 函数</a>
-          </li>
-        
-          <li>
-            <a href="/2026/11/26/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2026/11/24/hello-world/">Hello World</a>
           </li>
         
       </ul>

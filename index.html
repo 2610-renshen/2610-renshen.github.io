@@ -1,252 +1,66 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="author" content="John Doe"/><meta name="keyword"/><meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="https://2610-renshen.github.io/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
-  
-<link rel="stylesheet" href="/css/style.css">
-
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
-  
-  
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
-
-<meta name="generator" content="Hexo 8.1.2"></head>
-
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-        
-          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
-        
-        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://2610-renshen.github.io"></form>
-      </div>
-    </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-Python3-函数" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/11/26/Python3-%E5%87%BD%E6%95%B0/" class="article-date">
-  <time class="dt-published" datetime="2026-11-26T13:42:02.000Z" itemprop="datePublished">2026-11-26</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/11/26/Python3-%E5%87%BD%E6%95%B0/">Python3 函数</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="定义一个函数"><a href="#定义一个函数" class="headerlink" title="定义一个函数"></a>定义一个函数</h2><p>可以定义一个由自己想要功能的函数</p>
-<p>规则：</p>
-<p>函数代码块以 def 关键词开头，后接函数标识符名称和圆括号 ()。<br>任何传入参数和自变量必须放在圆括号中间，圆括号之间可以用于定义参数。<br>函数的第一行语句可以选择性地使用文档字符串—用于存放函数说明。<br>函数内容以冒号 : 起始，并且缩进。<br>return [表达式] 结束函数，选择性地返回一个值给调用方，不带表达式的 return 相当于返回 None。</p>
-<p> def 语法：</p>
-<p>def 函数名（参数列表）:<br>    函数体</p>
-<h2 id="函数调用"><a href="#函数调用" class="headerlink" title="函数调用"></a>函数调用</h2><p>定义一个函数，给了函数一个名称，指定了函数里包含的参数，和代码块结构之后可以通过另一个函数调用执行，也可以直接从 Python 命令提示符执行</p>
-<p>#!&#x2F;usr&#x2F;bin&#x2F;python3</p>
-<p>def printme( str ):</p>
-<p>   print (str)<br>   return</p>
-<p>printme(“我要调用用户自定义函数!”)<br>printme(“再次调用同一函数”）</p>
-<p>运行到def时知道创建了一个叫printme（str）的函数然后跳过def的子代码块，运行下面的代码，再次遇到printme时调用再调用函数</p>
-<h2 id="参数传递"><a href="#参数传递" class="headerlink" title="参数传递"></a>参数传递</h2><p>在 python 中，类型属于对象，对象有不同类型的区分，变量是没有类型的</p>
-<p>可更改(mutable)与不可更改(immutable)对象</p>
-<p>在 python 中，strings, tuples, 和 numbers 是不可更改的对象，而 list,dict 等则是可以修改的对象</p>
-<p>不可变类型：变量赋值 a&#x3D;5 后再赋值 a&#x3D;10，这里实际是新生成一个 int 值对象 10，再让 a 指向它，而 5 被丢弃，不是改变 a 的值，相当于新生成了 a。</p>
-<p>可变类型：变量赋值 la&#x3D;[1,2,3,4] 后再赋值 la[2]&#x3D;5 则是将 list la 的第三个元素值更改，本身la没有动，只是其内部的一部分值被修改了</p>
-<p>python 函数的参数传递：</p>
-<p>不可变类型：类似 C++ 的值传递，如整数、字符串、元组。如 fun(a)，传递的只是 a 的值，没有影响 a 对象本身。如果在 fun(a) 内部修改 a 的值，则是新生成一个 a 的对象。</p>
-<p>可变类型：类似 C++ 的引用传递，如 列表，字典。如 fun(la)，则是将 la 真正的传过去，修改后 fun 外部的 la 也会受影响</p>
-<p>不可变对象函数内改值，外部原样；可变对象函数内改内容，外部同步变化（函数内整体重新赋值，外部不变）</p>
-<h2 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h2><p>参数类型：</p>
-<p>必需参数<br>关键字参数<br>默认参数<br>不定长参数</p>
-<h3 id="必需参数"><a href="#必需参数" class="headerlink" title="必需参数"></a>必需参数</h3><p>在定义函数时，写在函数名括号里的变量叫形参；如果形参没有设置默认值，它就是一个必需参数</p>
-<p>调用必须函数时，必须给它传一个值，且不能少传多传</p>
-<h3 id="关键字参数"><a href="#关键字参数" class="headerlink" title="关键字参数"></a>关键字参数</h3><p>调用函数时，除了按位置传值，还可以写成 <strong><code>形参名=值</code></strong> 的形式，这种传参方式叫关键字参数</p>
-<p>注意：</p>
-<p>必需参数不可以放在关键字参数的后面</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">introduce(name，age，city）</span><br><span class="line">introduce(name=<span class="string">&quot;小红&quot;</span>, <span class="number">20</span>, <span class="string">&quot;北京&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<p>正确写法是位置参数放前面</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">introduce(&quot;小红&quot;, age=20, city=&quot;北京&quot;)</span><br></pre></td></tr></table></figure>
-
-<p>同一个参数不能重复传值</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">introduce(<span class="string">&quot;小红&quot;</span>, name=<span class="string">&quot;小明&quot;</span>, age=<span class="number">20</span>, city=<span class="string">&quot;北京&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<h3 id="默认参数"><a href="#默认参数" class="headerlink" title="默认参数"></a>默认参数</h3><p>调用函数时，如果没有传递参数，则会使用默认参数</p>
-<p>#!&#x2F;usr&#x2F;bin&#x2F;python3</p>
-<h2 id="可写函数说明"><a href="#可写函数说明" class="headerlink" title="#可写函数说明"></a>#可写函数说明</h2><p>def printinfo( name, age &#x3D; 35 ):<br>   “打印任何传入的字符串”<br>   print (“名字: “, name)<br>   print (“年龄: “, age)<br>   return</p>
-<p>#调用printinfo函数<br>printinfo( age&#x3D;50, name&#x3D;”runoob” )#这里age&#x3D;50<br>print (“————————“)<br>printinfo( name&#x3D;”runoob” )#这里没有定义age，会使用上面age的默认参数age&#x3D;35</p>
-<h3 id="不定长参数"><a href="#不定长参数" class="headerlink" title="不定长参数"></a>不定长参数</h3><p>不知道这个函数以后会传进来多少个参数，可以接收任意数量的参数</p>
-<p>有*（打包成元组）和**（打包成字典)两种</p>
-<p>顺序：普通参数 → * → **</p>
-<p>打包：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def test(*args):</span><br><span class="line">    print(args)</span><br><span class="line"></span><br><span class="line">test(&quot;hi&quot;, 666, True)</span><br></pre></td></tr></table></figure>
-
-<p>拆包：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nums = (10,20,30)</span><br><span class="line">func(*nums)</span><br></pre></td></tr></table></figure>
-
-<h3 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h3><p>用 lambda 来创建匿名函数</p>
-<p>不再使用 def 语句这样标准的形式定义一个函数，只能写一行表达式</p>
-<p>语法：</p>
-<p>lambda 参数（可以多个，也可以没有）: 返回值（只能是一个表达式，计算结果自动返回，不用写 return）</p>
-<h2 id="return-语句"><a href="#return-语句" class="headerlink" title="return 语句"></a>return 语句</h2><p>于退出函数，选择性地向调用方返回一个表达式。不带参数值的 return 语句返回 None</p>
-<p>作用：把函数里面算好的值，送回到调用它的那一行</p>
-<h2 id="强制位置参数"><a href="#强制位置参数" class="headerlink" title="强制位置参数"></a>强制位置参数</h2><p>写在 <code>/</code> 前面的参数，只能按顺序传，不能用关键字传参Python</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">def func(a, b, /, c):</span><br><span class="line">    print(a,b,c)</span><br></pre></td></tr></table></figure>
-
-<p>a，b在&#x2F;前面只能位置传参，c在&#x2F;后，哪种方法都可以</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://2610-renshen.github.io/2026/11/26/Python3-%E5%87%BD%E6%95%B0/" data-id="cuid-H5TmpOiWUdc0lIijHgvH" data-title="Python3 函数" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
+<meta name="twitter:card" content="summary"><title>MEOW - 可爱明亮的Hexo主题</title><link rel="shortcut icon" href="/img/site-icon.png">
+<link rel="stylesheet" href="/css/style.css" id="dm-light">
 
 
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-  
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/11/">November 2026</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2026/11/26/Python3-%E5%87%BD%E6%95%B0/">Python3 函数</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2026 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
+<script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+<meta name="generator" content="Hexo 8.1.2"></head><body><header><div class="top-nav" ondblclick="scrollToTop()"><div class="nav-info"><div class="nav-icon"><img id="nav-icon" src="/img/site-icon.png"/></div><div class="nav-title"><a id="nav-title" href="/" title="主页">Hexo</a></div></div><div class="nav-ribbon"><div class="top-menu-expanded"><a class="top-menu-item" href="/archives"><span>归档</span></a><a class="top-menu-item" href="/categories"><span>分类</span></a><a class="top-menu-item" href="/tags"><span>标签</span></a><a class="top-menu-item" href="/about"><span>关于</span></a></div><div id="top-menu-btn" onclick="openTopMenu()" title="打开菜单"><i class="fa-solid fa-bars fa-lg"></i></div></div></div></header><div id="top-menu-hidden"><div class="menu-hidden-content"><div class="menu-hidden-nav"><a class="menu-hidden-item" href="/archives"><i class="fa-solid fa-box-archive fa-sm"></i><span>归档</span></a><a class="menu-hidden-item" href="/categories"><i class="fa-regular fa-folder-open fa-sm"></i><span>分类</span></a><a class="menu-hidden-item" href="/tags"><i class="fa-solid fa-tags fa-sm"></i><span>标签</span></a><a class="menu-hidden-item" href="/about"><i class="fa-solid fa-paw fa-sm"></i><span>关于</span></a></div></div><div class="menu-hidden-blank" onclick="closeTopMenu()"></div></div>
+<div class="blog-info"><div class="blog-pic"><img id="blog-pic" src="/img/site-icon.png"/></div><div class="blog-title"><i class="fa-solid fa-paw fa-2xs fa-rotate-by"></i><span>MEOW</span><i class="fa-solid fa-paw fa-2xs fa-rotate-by"></i></div><div class="blog-desc">blog_info.description</div></div><div class="main"><div class="main-content"><div class="index-posts"><article class="index-post-item"><div class="post-title-index"><h1><a href="/2026/11/28/linux/"><i class="fa-solid fa-paw"></i></a></h1></div><div class="post-head-info"><div class="post-date"><i class="icon fa-regular fa-calendar-plus" title="发布日期"></i><time class="publish-time">2026-11-28</time></div>
+</div><div class="post-excerpt"></div><div class="read-more"><i class="fa-solid fa-paw fa-xs"></i><a class="read-more-link" href="/2026/11/28/linux/">阅读全文</a></div></article><article class="index-post-item"><div class="post-title-index"><h1><a href="/2026/11/27/linux2/"><i class="fa-solid fa-paw"></i></a></h1></div><div class="post-head-info"><div class="post-date"><i class="icon fa-regular fa-calendar-plus" title="发布日期"></i><time class="publish-time">2026-11-27</time></div>
+</div><div class="post-excerpt">grep：查找文本
+格式：grep 文本 目标文件
+grep -i 忽略大小写
+grep -n 显示行号
+grep -r 递归搜索目录（子目录）
+ps查看进程
+ps -aux 
+a：所有用户的进程
+u：展示用户、CPU、内存等详细信息
+x：包含没有终端的后台守护进程
+kill终止进程
+ip&#x2F;ifconfig查看和配置网络接口信息
+ping查看与主机的连通性
+chmod修改文件权限
+...</div><div class="read-more"><i class="fa-solid fa-paw fa-xs"></i><a class="read-more-link" href="/2026/11/27/linux2/">阅读全文</a></div></article><article class="index-post-item"><div class="post-title-index"><h1><a href="/2026/11/26/Python3-%E5%87%BD%E6%95%B0/"><i class="fa-solid fa-paw"></i>Python3 函数</a></h1></div><div class="post-head-info"><div class="post-date"><i class="icon fa-regular fa-calendar-plus" title="发布日期"></i><time class="publish-time">2026-11-26</time></div>
+</div><div class="post-excerpt">定义一个函数可以定义一个由自己想要功能的函数
+规则：
+函数代码块以 def 关键词开头，后接函数标识符名称和圆括号 ()。任何传入参数和自变量必须放在圆括号中间，圆括号之间可以用于定义参数。函数的第一行语句可以选择性地使用文档字符串—用于存放函数说明。函数内容以冒号 : 起始，并且缩进。return [表达式] 结束函数，选择性地返回一个值给调用方，不带表达式的 return 相当于返回 N...</div><div class="read-more"><i class="fa-solid fa-paw fa-xs"></i><a class="read-more-link" href="/2026/11/26/Python3-%E5%87%BD%E6%95%B0/">阅读全文</a></div></article></div><div class="pagination"><span class="extend prev" rel="prev"><i class="icon-prev fa-solid fa-chevron-left"></i></span><span class="page-number current">1</span><span class="extend next" rel="next"><i class="icon-next fa-solid fa-chevron-right"></i></span></div></div></div><div id="tool-bar"><div id="tool-bar-main"><div id="tool-toggle" onclick="toolToggle()" title="设置"><i class="fa-solid fa-gear"></i></div><div id="back-to-top" onclick="scrollToTop()" title="返回顶部"><i class="fa-solid fa-chevron-up"></i></div></div><div id="tool-bar-more" style="display: none;"><div id="darkmode-switch" onclick="darkmodeSwitch()" title="深色模式"><i class="fa-solid fa-circle-half-stroke"></i></div></div></div><footer><div class="footer-content"><div class="copyright-info"><i class="fa-regular fa-copyright fa-xs"></i><span>2024 - 2026 </span><a href="/about">John Doe</a><i class="fa-solid fa-cat fa-sm"></i><span>Powered by </span><a href="https://hexo.io/" target="_blank">Hexo</a><span> &amp; </span><a href="https://github.com/chanwj/hexo-theme-meow" target="_blank" title="v2.1.5">Theme Meow</a></div><div class="pageview-site"><span id="busuanzi_container_site_pv">总访问量 : <span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner"></i></span></span><span id="busuanzi_container_site_uv">总访客数 : <span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner"></i></span></span></div></div></footer>
+<script>const GLOBAL_CONFIG = {
+  comment: { theme: ''}
+}
+</script>
+<script src="/js/third-party/darkmode.js"></script>
+<script>var options = {
+  dark: '/css/darkmode.css',
+  startAt: '24:00',
+  endAt: '06:00',
+  checkSystemScheme: 'false',
+  saveOnToggle: 'true'
+};
+var darkMode = new DarkMode(options);
+// change comment theme synchronously 同步修改评论区主题
+if (darkMode.getMode() == "dark" && (true || true)) {
+  if (document.getElementById('comment')) {
+    document.getElementById('comment').getElementsByTagName('script')[0].setAttribute('data-theme', 'noborder_dark');
+  }
+}
+</script>
+<script src="/js/theme/tool-bar.js"></script>
 
 
-<script src="/js/jquery-3.6.4.min.js"></script>
+<script src="/js/theme/menu.js"></script>
 
 
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
+<script src="/js/third-party/clipboard.min.js"></script>
 
 
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
-</body>
-</html>
+<script src="/js/theme/copy.js"></script>
+<script>copyCode();
+</script></body></html>
